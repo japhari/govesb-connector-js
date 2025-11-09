@@ -1,0 +1,15 @@
+{
+  "name": "govesb-connector-js-example-basic",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Basic usage demo for govesb-connector-js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "govesb-connector-js": "^0.1.0"
+  }
+}
+
+
