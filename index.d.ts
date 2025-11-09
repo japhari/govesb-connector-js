@@ -14,6 +14,9 @@ export class GovEsbHelper {
 
 	getAccessToken(): Promise<any>;
 
+	signPayload(payload: string | object): string;
+	verifySignature(data: string | object, signatureB64: string): boolean;
+
 	requestData(apiCode: string, requestBody: string, format: 'json' | 'xml'): Promise<string | null>;
 	requestNida(apiCode: string, requestBody: string, format: 'json' | 'xml'): Promise<string | null>;
 	pushData(apiCode: string, requestBody: string, format: 'json' | 'xml'): Promise<string | null>;
