@@ -1,6 +1,6 @@
 {
   "name": "govesb-connector-js",
-  "version": "0.1.1",
+  "version": "1.1.0",
   "description": "GovESB connector for Node.js: OAuth, ECDSA signing, ECDH+HKDF AES-GCM, JSON/XML.",
   "main": "GovEsbHelper.js",
   "types": "index.d.ts",
