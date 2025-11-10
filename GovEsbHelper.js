@@ -277,6 +277,18 @@ class GovEsbHelper {
         return this.#signPayloadECC(payload);
     }
 
+	// Public signing helper for consumers
+	signPayload(payload) {
+		const stringified = typeof payload === 'string' ? payload : JSON.stringify(payload);
+		return this.#signData(stringified);
+	}
+
+	// Public verification helper for consumers
+	verifySignature(data, signatureB64) {
+		const stringified = typeof data === 'string' ? data : JSON.stringify(data);
+		return this.#verifyPayloadECC(stringified, signatureB64);
+	}
+
     #signPayloadECC(payload) {
         const pem = this.#wrapPrivateKeyPem(this.clientPrivateKey);
         const sign = crypto.createSign('sha256');
@@ -299,6 +311,15 @@ class GovEsbHelper {
             return false;
         }
     }
+
+	// Public helpers for external signing/verification
+	signPayload(payload) {
+		return this.#signPayloadECC(payload);
+	}
+
+	verifyPayload(data, signatureB64) {
+		return this.#verifyPayloadECC(data, signatureB64);
+	}
 
     // ---------------------------
     // ECDH + HKDF + AES-256-GCM
